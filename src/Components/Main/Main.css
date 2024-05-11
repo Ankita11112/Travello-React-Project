@@ -1,0 +1,129 @@
+.main{
+    width: 100%;
+
+    .secTitle{
+        .title{
+            position: relative;
+            width: max-content;
+            margin: 1rem 0;
+            z-index: 2;
+
+            &::after{
+                position: absolute;
+                content:  "";
+                background: rgb(11, 199, 199);
+                height: 5px;
+                width: 175px;
+                right: 0;
+                bottom: 5px;
+                z-index: -1;
+            }
+        }
+    }
+
+    .secContent{
+        justify-content: center;
+        gap: 1.5rem;
+
+        .singleDestination{
+            height: 100%;
+            display: grid;
+            row-gap: 20px;
+            border-radius: 10px;
+            align-items: center;
+            background: rgb(238, 240, 240);
+            box-shadow: 0 2px 4px rgba(140 , 140 , 141 , 0.549);
+            overflow:  hidden;
+
+            &:hover{
+                background: rgb(227, 255, 249);
+                box-shadow: 1 4px 4px rgba(85 , 85 , 141 , 0.549);
+                transition: .3s ease;
+            }
+
+            .imageDiv{
+                height: 200px;
+                width: 100%;
+                overflow: hidden;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 2s ease;
+
+                    &:hover{
+                        img{
+                            transform: scale(1.5)!important;
+                        }
+                    }
+                }
+
+                .cardInfo{
+                   padding: 1rem;
+
+                    .destTitle{
+                        color: black;
+                        font-size: 1.25rem;
+
+                    }
+
+                    .continent{
+                        gap: .5rem;
+                
+                        icon{
+                            font-size: 18px;
+                            color: rgb(251, 254, 255);
+                        }
+
+                        .name{
+                        font-weight: 400;
+                        font-size: 14px;
+                        }
+                    }
+
+                    .feess{
+                        width: 100%;
+                        justify-content: end;
+                        padding-top: 1rem;
+                        margin: 1rem 0;
+                      
+                    }
+                }
+
+
+            }
+        }
+
+    }
+}
+
+
+/* *********************Media Query**************** */
+
+@media screen and (min-width: 500px){
+    .title{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+        }
+    }
+
+    .secContent{
+        grid-template-columns:repeat(2, 1fr);
+
+        .singleDestination{
+            height:auto;
+        }
+    }
+}
+
+@media screen and (min-width: 840px){
+    .secContent{
+        grid-template-columns: repeat(3,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
